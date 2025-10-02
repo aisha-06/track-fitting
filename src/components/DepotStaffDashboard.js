@@ -8,7 +8,6 @@ import {
   faTruck,
   faChartLine,
   faBoxOpen,
-  faCheckCircle,
   faDatabase, faProjectDiagram
   
 } from "@fortawesome/free-solid-svg-icons";
