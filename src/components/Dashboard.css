@@ -1,0 +1,318 @@
+/* ---------------- Dashboard Wrapper ---------------- */
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #F4F6F8;
+}
+
+/* ---------------- Top Header ---------------- */
+.dashboard-top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1A3C8E;
+  color: white;
+  padding: 15px 30px;
+  height: 80px;
+}
+.depot-title {
+  background-color: #1A3C8E;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.header-actions span {
+  margin-right: 20px;
+}
+
+.logout-btn, .export-btn {
+  background-color: #FF6B6B;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.export-btn {
+  background-color: #4DA8DA;
+}
+
+.logout-btn:hover, .export-btn:hover {
+  opacity: 0.8;
+}
+
+/* ---------------- Main Section ---------------- */
+.dashboard-main {
+  display: flex;
+  flex: 1; /* fills remaining space below header */
+  min-height: calc(100vh - 80px);
+}
+
+/* ---------------- Sidebar ---------------- */
+.dashboard-sidebar {
+  width: 260px;
+  background-color: #ECEFF1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  height: 100%; /* full height below header */
+  position: sticky;
+  top: 0;
+}
+
+.menu-item {
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #2C2C2C;
+  font-weight: 500;
+}
+
+.menu-item.active {
+  background-color: #1A3C8E;
+  color: white;
+}
+
+.menu-item:hover {
+  background-color: #4DA8DA;
+  color: white;
+}
+
+/* ---------------- Right Side: Cards + Content ---------------- */
+.dashboard-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+  overflow-y: auto;
+}
+
+/* ---------------- Cards (Vertical Column) ---------------- */
+.dashboard-cards {
+  display: flex;
+  flex-direction: column;  /* stack vertically */
+  gap: 20px;
+  margin-bottom: 30px;
+  width: 100%; /* take full right section width */
+}
+
+.dashboard-card {
+  background: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card-icon {
+  margin-right: 15px;
+}
+
+.card-info h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.card-value {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.card-change {
+  font-size: 12px;
+  color: #666;
+}
+
+/* ---------------- Content Area ---------------- */
+.dashboard-content {
+  background-color: #F4F6F8;
+  flex: 1;
+  padding: 20px;
+  border-radius: 10px;
+  min-height: 300px;
+}
+
+/* ---------------- Responsive Media Queries ---------------- */
+
+/* Tablets (768px - 991px) */
+@media (max-width: 991px) {
+  .dashboard-main {
+    flex-direction: column;
+  }
+
+  .dashboard-sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .dashboard-right {
+    padding: 15px 20px;
+  }
+}
+
+/* Small tablets / large phones (576px - 767px) */
+@media (max-width: 767px) {
+  .dashboard-top-header {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .header-actions span {
+    margin-right: 10px;
+  }
+
+  .dashboard-cards {
+    width: 100%;
+  }
+
+  .dashboard-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Mobile (max-width: 575px) */
+@media (max-width: 575px) {
+  .dashboard-sidebar {
+    display: none; /* hide sidebar on small screens */
+  }
+
+  .dashboard-right {
+    padding: 10px 15px;
+  }
+
+  .dashboard-top-header {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .dashboard-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-icon {
+    margin-bottom: 10px;
+  }
+
+  .dashboard-content {
+    padding: 10px;
+  }
+}
+/* Center Content */
+.dashboard-center {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Right Cards Column */
+.dashboard-right-cards {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background: #f9f9f9;
+}
+
+.dashboard-right-cards .dashboard-card {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.offline-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.offline-container h2 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 24px;
+}
+
+.offline-container p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.workflow-box {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.workflow-box h3 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 18px;
+}
+
+.workflow-box ol {
+  margin: 0;
+  padding-left: 20px;
+  color: #555;
+}
+
+.note-box {
+  background: #e0f2ff;
+  border-left: 4px solid #007acc;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  color: #007acc;
+}
+
+.status-box {
+  background: #f0f0f0;
+  padding: 12px 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.status-box p {
+  margin: 5px 0;
+}
+
+.scan-button {
+  background: #007acc;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.scan-button:hover {
+  background: #005fa3;
+}
